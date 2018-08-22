@@ -4,7 +4,7 @@
 
   <groupId>org.springframework</groupId>
   <artifactId>BuildingJavaProjectswithMavenEclipse</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.0</version>
   <packaging>jar</packaging>
 
   <name>BuildingJavaProjectswithMavenEclipse</name>
@@ -18,8 +18,13 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>2.9.2</version>
     </dependency>
   </dependencies>
 </project>
