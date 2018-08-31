@@ -1,5 +1,6 @@
 package com.liobouchan.BuildingSpringBootMavenNeo4J.Domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.neo4j.ogm.annotation.GeneratedValue;
