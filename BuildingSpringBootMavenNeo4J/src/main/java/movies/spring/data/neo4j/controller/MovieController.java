@@ -1,4 +1,4 @@
-package com.liobouchan.BuildingSpringBootMavenNeo4J.Controllers;
+package movies.spring.data.neo4j.controller;
 
 import java.util.Collection;
 import java.util.Map;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.liobouchan.BuildingSpringBootMavenNeo4J.Domain.Movie;
-import com.liobouchan.BuildingSpringBootMavenNeo4J.Services.MovieService;
+import movies.spring.data.neo4j.domain.Movie;
+import movies.spring.data.neo4j.services.MovieService;
 
 @RestController
 @RequestMapping("/")
@@ -21,7 +21,7 @@ public class MovieController {
 		this.movieService = movieService;
 	}
 	
-	@GetMapping("/movie")
+/*	@GetMapping("/movie")
 	public Movie findByTitle(@RequestParam String title) {
 		return movieService.findByTitle(title);
 	}
@@ -29,7 +29,7 @@ public class MovieController {
 	@GetMapping("/movies")
 	public Collection<Movie> findByTitleLike(@RequestParam String title){
 		return movieService.findByTitleLike(title);
-	}
+	}*/
 	
 	@GetMapping("/graph")
 	public Map<String, Object> graph(@RequestParam(value="limit", required = false)

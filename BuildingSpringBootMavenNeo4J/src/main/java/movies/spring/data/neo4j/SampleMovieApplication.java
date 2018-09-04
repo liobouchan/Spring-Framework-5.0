@@ -1,11 +1,11 @@
-package com.liobouchan.BuildingSpringBootMavenNeo4J;
+package movies.spring.data.neo4j;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 
 @SpringBootApplication
-@EnableNeo4jRepositories("com.liobouchan.BuildingSpringBootMavenNeo4J.Repositories")
+@EnableNeo4jRepositories("movies.spring.data.neo4j.repositories")
 public class SampleMovieApplication {
 
 	public static void main(String[] args) {

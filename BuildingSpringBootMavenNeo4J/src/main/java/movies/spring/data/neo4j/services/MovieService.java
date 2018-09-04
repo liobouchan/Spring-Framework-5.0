@@ -1,20 +1,15 @@
-package com.liobouchan.BuildingSpringBootMavenNeo4J.Services;
+package movies.spring.data.neo4j.services;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.liobouchan.BuildingSpringBootMavenNeo4J.Domain.Movie;
-import com.liobouchan.BuildingSpringBootMavenNeo4J.Domain.Role;
-import com.liobouchan.BuildingSpringBootMavenNeo4J.Repositories.MovieRepository;
+import movies.spring.data.neo4j.domain.Movie;
+import movies.spring.data.neo4j.domain.Role;
+import movies.spring.data.neo4j.repositories.MovieRepository;
 
 @Service
 public class MovieService {
@@ -25,14 +20,6 @@ public class MovieService {
 	
 	public MovieService(MovieRepository movieRepository) {
 		this.movieRepository = movieRepository;
-	}
-	
-	
-	private Map<String, Object> map(String key1, Object value1, String key2, Object value2) {
-		Map<String, Object> result = new HashMap<String, Object>(2);
-		result.put(key1, value1);
-		result.put(key2, value2);
-		return result;
 	}
 	
 	private Map<String, Object> toD3Format(Collection<Movie> movies) {
@@ -56,6 +43,13 @@ public class MovieService {
 			}
 		}
 		return map("nodes", nodes, "links", rels);
+	}
+	
+	private Map<String, Object> map(String key1, Object value1, String key2, Object value2) {
+		Map<String, Object> result = new HashMap<String, Object>(2);
+		result.put(key1, value1);
+		result.put(key2, value2);
+		return result;
 	}
 	
 	@Transactional(readOnly = true)

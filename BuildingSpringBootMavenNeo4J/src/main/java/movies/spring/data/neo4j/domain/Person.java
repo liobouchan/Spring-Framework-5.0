@@ -1,4 +1,4 @@
-package com.liobouchan.BuildingSpringBootMavenNeo4J.Domain;
+package movies.spring.data.neo4j.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,20 +10,21 @@ import org.neo4j.ogm.annotation.Relationship;
 
 @NodeEntity
 public class Person {
-	@Id  @GeneratedValue private long id;
+	@Id  
+	@GeneratedValue 
+	private long id;
 	private String name;
 	private int born;
 	
 	@Relationship(type = "ACTED_IN")
 	private List<Movie> movies = new ArrayList<>();
 
+	public Person() {
+	}
 	
-	public Person(long id, String name, int born) {
+	public Person(String name, int born) {
 		this.name = name;
 		this.born = born;
-	}
-
-	public Person() {
 	}
 
 	public long getId() {

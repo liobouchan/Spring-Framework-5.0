@@ -1,4 +1,4 @@
-package com.liobouchan.BuildingSpringBootMavenNeo4J.Domain;
+package movies.spring.data.neo4j.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,9 @@ public class Movie {
 	@Relationship( type = "ACTED_IN", direction = Relationship.INCOMING )
 	private List<Role> roles;
 
+	public Movie() {
+	}
+	
 	public Movie(String title, int released, String tagline) {
 		this.title = title;
 		this.released = released;
